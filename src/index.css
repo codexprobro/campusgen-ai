@@ -1,0 +1,909 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #17213b;
+  background: #f7f8fc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #a5a6ff;
+  outline-offset: 3px;
+}
+
+.institution-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 28%, rgba(226, 224, 255, 0.35), transparent 44%),
+    #f7f8fc;
+}
+
+.topbar {
+  height: 82px;
+  padding: 0 7.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid #e9ebf3;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #18213d;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: -0.8px;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6d5dfc, #8e65f8);
+  color: white;
+  font-size: 23px;
+  box-shadow: 0 5px 15px rgba(109, 93, 252, 0.22);
+}
+
+.brand-ai {
+  color: #7664f8;
+}
+
+.topbar-label {
+  color: #8991a8;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.institution-main {
+  width: min(100% - 40px, 780px);
+  margin: 0 auto;
+  padding: 70px 0 24px;
+}
+
+.welcome-badge {
+  width: fit-content;
+  margin: 0 auto 24px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid #e4e0ff;
+  border-radius: 30px;
+  background: #f0eeff;
+  color: #7060d9;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.25px;
+  text-align: center;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #7d6af7;
+}
+
+.institution-main h1 {
+  margin: 0;
+  color: #19213a;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(40px, 7vw, 64px);
+  font-weight: 800;
+  line-height: 1.13;
+  letter-spacing: -3px;
+  text-align: center;
+}
+
+.institution-main h1 span {
+  color: #7765f7;
+}
+
+.welcome-description {
+  max-width: 520px;
+  margin: 20px auto 39px;
+  color: #7d859c;
+  font-size: 14px;
+  line-height: 1.9;
+  text-align: center;
+}
+
+.institution-selector {
+  padding: 30px;
+  border: 1px solid #e8eaf2;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 18px 55px rgba(34, 43, 84, 0.065);
+}
+
+.selector-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 23px;
+}
+
+.selector-heading h2 {
+  margin: 0 0 7px;
+  color: #202944;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.selector-heading p {
+  margin: 0;
+  color: #939aaf;
+  font-size: 12px;
+}
+
+.institution-count {
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: #f2f0ff;
+  color: #7665e7;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 54px;
+  padding: 0 15px;
+  border: 1px solid #e7e9f2;
+  border-radius: 11px;
+  background: #fafbfe;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-box:focus-within {
+  border-color: #9284fa;
+  box-shadow: 0 0 0 4px rgba(119, 101, 247, 0.08);
+}
+
+.search-icon {
+  color: #888fa5;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.search-box input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #202944;
+  font-size: 12px;
+}
+
+.search-box input::placeholder {
+  color: #a5abbb;
+}
+
+.search-box input:focus-visible {
+  outline: none;
+}
+
+.search-shortcut {
+  color: #a0a6b8;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.institution-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 17px;
+}
+
+.institution-card {
+  width: 100%;
+  min-height: 88px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid #e9ebf3;
+  border-radius: 13px;
+  background: #fff;
+  text-align: left;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.institution-card:hover {
+  transform: translateY(-2px);
+  border-color: #c9c1ff;
+  box-shadow: 0 7px 20px rgba(39, 43, 92, 0.05);
+}
+
+.institution-card.selected {
+  border-color: #8d7bfa;
+  background: #faf9ff;
+  box-shadow: 0 0 0 2px rgba(119, 101, 247, 0.07);
+}
+
+.institution-logo {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #eeeaff, #e1dcff);
+  color: #7462ec;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.institution-card:nth-child(2) .institution-logo {
+  background: #e4f4ff;
+  color: #3586c4;
+}
+
+.institution-card:nth-child(3) .institution-logo {
+  background: #e2f8ed;
+  color: #32996c;
+}
+
+.institution-info {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.institution-info strong {
+  color: #242c46;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.institution-info > span {
+  color: #858da3;
+  font-size: 11px;
+}
+
+.institution-info small {
+  width: fit-content;
+  padding: 4px 7px;
+  border-radius: 5px;
+  background: #f2f3f9;
+  color: #858da3;
+  font-size: 9px;
+}
+
+.select-indicator {
+  width: 29px;
+  height: 29px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e7e9f2;
+  border-radius: 9px;
+  color: #939bb0;
+  font-size: 17px;
+}
+
+.institution-card.selected .select-indicator {
+  border-color: #7765f7;
+  background: #7765f7;
+  color: #fff;
+}
+
+.empty-state {
+  padding: 30px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #8a91a6;
+  text-align: center;
+}
+
+.empty-state > span {
+  font-size: 28px;
+}
+
+.empty-state strong {
+  color: #333c55;
+  font-size: 14px;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.continue-button {
+  width: 100%;
+  min-height: 53px;
+  margin-top: 23px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: none;
+  border-radius: 11px;
+  background: linear-gradient(100deg, #6d5df4, #8665f5);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 7px 17px rgba(109, 93, 244, 0.18);
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+
+.continue-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(109, 93, 244, 0.26);
+}
+
+.continue-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  box-shadow: none;
+}
+
+.continue-button span {
+  font-size: 19px;
+}
+
+.privacy-note {
+  margin: 19px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #9aa1b3;
+  font-size: 10px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.privacy-note span {
+  color: #8c7bf7;
+  font-size: 10px;
+}
+
+.page-footer {
+  margin-top: 43px;
+  padding: 23px 0 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  border-top: 1px solid #e8eaf2;
+  color: #a0a6b6;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .brand {
+    gap: 9px;
+    font-size: 18px;
+  }
+
+  .brand-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+  }
+
+  .topbar-label {
+    max-width: 105px;
+    font-size: 8px;
+    letter-spacing: 1px;
+    text-align: right;
+  }
+
+  .institution-main {
+    width: min(100% - 28px, 780px);
+    padding-top: 48px;
+  }
+
+  .welcome-badge {
+    max-width: 100%;
+    padding: 9px 10px;
+    font-size: 8px;
+    letter-spacing: 0.8px;
+  }
+
+  .institution-main h1 {
+    font-size: clamp(38px, 10vw, 54px);
+    letter-spacing: -2px;
+  }
+
+  .welcome-description {
+    margin: 17px auto 29px;
+    font-size: 13px;
+  }
+
+  .institution-selector {
+    padding: 19px 15px;
+    border-radius: 17px;
+  }
+
+  .selector-heading h2 {
+    font-size: 16px;
+  }
+
+  .selector-heading p {
+    font-size: 11px;
+  }
+
+  .institution-count {
+    padding: 6px 7px;
+    font-size: 9px;
+  }
+
+  .search-box {
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .search-box input {
+    font-size: 11px;
+  }
+
+  .search-shortcut {
+    display: none;
+  }
+
+  .institution-card {
+    gap: 10px;
+    padding: 12px 10px;
+  }
+
+  .institution-logo {
+    width: 41px;
+    height: 41px;
+    border-radius: 10px;
+  }
+
+  .institution-info strong {
+    font-size: 12px;
+  }
+
+  .institution-info > span {
+    font-size: 10px;
+  }
+
+  .page-footer {
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+/* CampusGen AI — role selection and login */
+
+.role-page,
+.login-page {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 24px;
+  padding: 9px 0;
+  border: none;
+  background: transparent;
+  color: #6d4aff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.role-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin: 34px 0 18px;
+}
+
+.role-section-heading h2 {
+  font-size: 21px;
+  font-weight: 750;
+  color: #201c35;
+  margin-bottom: 5px;
+}
+
+.role-section-heading p {
+  color: #858196;
+  font-size: 14px;
+}
+
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.role-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 190px;
+  padding: 22px;
+  border: 1px solid #e9e5f3;
+  border-radius: 18px;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.role-card:hover {
+  border-color: #b6a5ff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(69, 46, 140, 0.08);
+}
+
+.role-card:focus-visible,
+.back-button:focus-visible {
+  outline: 3px solid #a797ff;
+  outline-offset: 3px;
+}
+
+.role-card.role-selected {
+  border: 2px solid #7855f7;
+  background: #f7f4ff;
+  box-shadow: 0 8px 24px rgba(109, 74, 255, 0.1);
+}
+
+.role-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 19px;
+}
+
+.role-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #f1edff;
+  font-size: 25px;
+}
+
+.role-check {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f5f3fa;
+  color: #776e91;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.role-selected .role-check {
+  background: #7855f7;
+  color: #ffffff;
+}
+
+.role-tag {
+  margin-bottom: 7px;
+  color: #8064d8;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.role-title {
+  margin-bottom: 7px;
+  color: #28223c;
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.role-description {
+  color: #858196;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.role-guest {
+  grid-column: 1 / -1;
+  min-height: 140px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 34px;
+  border: 1px solid #ece8f5;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 16px 50px rgba(43, 31, 87, 0.06);
+}
+
+.login-icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 24px;
+  border-radius: 18px;
+  background: #f0ebff;
+  font-size: 30px;
+}
+
+.login-card h1 {
+  margin-top: 20px;
+  color: #201c35;
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.login-form label {
+  margin-top: 8px;
+  color: #373047;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.login-form > input,
+.password-field input {
+  width: 100%;
+  min-width: 0;
+  padding: 14px 15px;
+  border: 1px solid #e4dfed;
+  border-radius: 11px;
+  background: #ffffff;
+  color: #28223c;
+  font-size: 14px;
+  outline: none;
+}
+
+.login-form > input:focus,
+.password-field input:focus {
+  border-color: #7855f7;
+  box-shadow: 0 0 0 3px rgba(120, 85, 247, 0.1);
+}
+
+.password-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 10px;
+  border: 1px solid #e4dfed;
+  border-radius: 11px;
+}
+
+.password-field input {
+  border: none;
+  box-shadow: none;
+}
+
+.password-field input:focus {
+  box-shadow: none;
+}
+
+.show-password {
+  padding: 8px;
+  border: none;
+  background: transparent;
+  color: #6d4aff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login-form .continue-button {
+  margin-top: 14px;
+}
+
+.login-message {
+  padding: 12px;
+  border-radius: 10px;
+  background: #f4f0ff;
+  color: #5d43b1;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .role-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .role-guest {
+    grid-column: auto;
+  }
+
+  .role-card {
+    min-height: 165px;
+    padding: 18px;
+  }
+
+  .role-section-heading {
+    align-items: flex-start;
+  }
+
+  .login-card {
+    padding: 23px;
+  }
+}
+/* CampusGen AI Student Dashboard */
+
+.dashboard-page {
+  min-height: 65vh;
+  padding: 48px 40px;
+  margin: 24px auto;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #eef2ff, #f8faff);
+  border: 1px solid #dfe5ff;
+  box-sizing: border-box;
+  animation: dashboardFadeIn 0.4s ease;
+}
+
+.dashboard-page h1 {
+  margin: 0 0 14px;
+  color: #242b64;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 750;
+  letter-spacing: -1px;
+}
+
+.dashboard-page p {
+  margin: 0;
+  color: #646b85;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+@keyframes dashboardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-page {
+    padding: 32px 22px;
+    margin: 16px auto;
+  }
+}
+.feature-card {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e5eaf2;
+  border-radius: 16px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: #bfdbfe;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.12);
+}
+
+.feature-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #eff6ff;
+  color: #2563eb;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.feature-card:hover .feature-icon {
+  background: #2563eb;
+  color: #ffffff;
+  transform: scale(1.06);
+}
+
+.feature-card:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feature-card,
+  .feature-icon {
+    transition: none;
+  }
+
+  .feature-card:hover,
+  .feature-card:hover .feature-icon {
+    transform: none;
+  }
+}
